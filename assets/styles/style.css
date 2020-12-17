@@ -1,0 +1,217 @@
+@media screen and (max-width: 1000px) {
+   #content,
+   aside {
+       width: 100%;
+       padding: 0;
+   }
+}
+
+body {
+   font-family: 'Quicksand', sans-serif;
+   margin: 0;
+   padding: 0;
+}
+
+main {
+   padding: 20px;
+   overflow: auto;
+}
+
+nav a { /*ukuran teks pada navigasi akan tampak lebih besar dan tidak memiliki garis bawah.*/
+   font-size: 18px;
+   font-weight: 400;
+   text-decoration: none;
+}
+
+.jumbotron {
+   font-size: 20px;
+   padding: 40px;
+   background-color: #d18334;
+   text-align: center;
+   color: white;
+   font-family: : 'Courier', monospace, Gadget;
+}
+
+#content {
+   float: left;
+   width: 75%;
+}
+
+aside {
+   float: right;
+   width: 25%;
+   padding-left: 20px;
+}
+
+* {
+   box-sizing: border-box;
+}
+
+/*.fixed {
+           position: fixed;
+           max-height: 300px;
+           top: 0;
+           left: 0;
+       }*/
+ 
+nav li {  /*untuk  mengatur elemen <li> yang menjadi turunan dari elemen pada menu <nav>*/
+   display: inline;
+   list-style-type: none;
+   margin-right: 20px;
+}
+
+nav {
+   background-color: #00a2c6;
+   padding: 5px;
+   position: sticky; /*supaya navigasinya tetap terlihat walaupun di scrolling*/
+   top: 0;
+}
+
+header {  /*supaya navigasi dapat menempel pada seluruh halaman*/
+   display: inline;
+}
+
+nav a { /*untuk mengatur warna teks pada navigasi, kita tambahkan properti color pada selector nav a*/
+   font-size: 18px;
+   font-weight: 400;
+   text-decoration: none;
+   color: white;
+}
+
+nav a:hover { /*efek tebal pada teks ketika salah satu item navigasi diarahkan menggunakan kursor.*/
+   font-weight: bold;
+   color: #e8d8b7;
+}
+
+.featured-image:hover {
+    position:relative;
+    top:-25px;
+    left:-35px;
+    width:500px;
+    height:auto;
+    display:block;
+    z-index:999;
+}
+
+.featured-image {
+   width: 100%;
+   max-height: 300px;
+   object-fit: cover; /*ini dan dibawah ini supaya gambar ga lebar banget, atau satu layar penuh. intinya buat 
+   menyesuaikan lebar dan panjang dengan mempertahankan kualitas rasio aslinya.*/
+   object-position: center;
+}
+
+.profile header {
+   text-align: center; /*supaya rata tengah*/
+}
+
+.box {
+   width: 200px;
+   height: 200px;
+}
+ 
+.first {
+   background-color: #60d0a8;
+}
+ 
+.second {
+   background-color: #6495ed;
+   margin-top: 20px;
+   margin-left: 10px;
+   position: relative;
+
+}
+ 
+.third {
+   background-color: #ffa500;
+}
+
+.profile img {
+   width: 200px;
+}
+
+.card { /*supaya bergaya card effect dengan menerapkan properti box-shadow dan border-radius*/
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+   border-radius: 5px;
+   padding: 20px; /*padding dan margin top untuk memperbaiki tepian konten pada card karena tampak terlalu sempit dari sisi cardnya.*/
+   margin-top: 20px;
+   background-color: #d8f2f2;
+}
+
+h1 {
+   font-size: 200%; /* 150% dari 16 = 24px */
+}
+
+h2 {
+   color: #00a2c6
+}
+ 
+h3 {
+   color: #00a2c6 /*kalo misalkan ada fungsinya yang sama, kayak h2 dan h3 ini kan warnanya sama, bisa tulisnya 1 aja --->>>>>  h2, h3 {
+   color: #00a2c6}*/
+}
+
+p {
+   line-height: 2; /*ini untuk mengatur tinggi baris 2x lipat
+    line-height: 200%;
+      line-height: 2em;*/
+}
+
+footer {
+   padding: 20px;
+   color: white;
+   background-color: #00a2c6;
+   text-align: center;
+   font-weight: bold;
+}
+
+/* TENTANG WARNA 
+Warna hijau menggunakan format RGB 
+color: rgb(78,231,23);
+ 
+Warna hijau Menggunakan format HEX 
+color: #4ee717; 
+
+color: black;
+color: white;
+color: blue; 
+
+
+div#opacity {     ----> ini untuk menspesifikasikan nilai transparan pada elemen HTML. Nilai dari properti opacity 
+merupakan angka desimal antara 0.0 hingga 1.0, jika kita menetapkan nilainya 0.5 itu berarti 50% transparan.
+   background-color: red;
+   opacity: 0.5;
+}
+
+p { color: gray; }
+p { color: #666666; }
+p { color: #666; }
+p { color: rgb(102,102,102); }
+
+
+*/
+
+/*pada alur kerja CSS dalam membaca kode, mengalir dari atas ke bawah. Karena itu kita harus memperhatikan urutan dalam penulisan rules, terutama saat terjadi sebuah konflik.
+Contohnya, apa yang seharusnya ditampilkan pada browser ketika eksternal css mengharuskan elemen <p> menampilkan warna merah, tetapi pada embedded css <p> harus menampilkan warna biru? Kembali pada alur kerja CSS yang membaca dari atas ke bawah, sehingga warna yang akan diterapkan adalah warna yang paling akhir didefinisikan. */
+
+/*
+<!doctype html>
+<html lang="en">
+<head>
+   <title>Judul Dokumen</title>
+   <style>
+       p {
+           color: red !important; -------------->Dengan menambahkan !important, akan keluar warna merah, bukan biru
+       }
+ 
+       p {
+           color: blue;
+       }
+   </style>
+</head>
+<body>
+<p>Sesuai dengan namanya cascading yang artinya <q>mengalir</q>, alur kerja CSS dalam membaca kode pun seperti itu. Mengalir dari atas ke bawah sehingga kita harus memperhatikan urutan dalam penulisan rules <i>styling</i></p>
+</body>
+</html>
+
+
